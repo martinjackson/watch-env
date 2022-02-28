@@ -19,8 +19,8 @@ npx watch-env --watch &
 
 ## Examples of using in you project's package.json:
 ```
-    "prep": "node watch-env.mjs",
-    "watch": "node watch-env.mjs --watch &",
+    "prep": "npx watch-env",
+    "watch": "npx watch-env --watch &",
     
     "build": "run-s prep webpack"
     "front": "webpack serve",
