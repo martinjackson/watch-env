@@ -1,0 +1,36 @@
+{
+  "name": "watch-env",
+  "version": "0.9.0",
+  "description": "a utility to convert .env file into ./src/initEnv.js that can be included in your front end code so the back end and front end can share project wide constants.",
+  "main": "index.js",
+  "bin": {
+    "watch-env": "./index.js"
+  },
+  "scripts": {
+    "test": "rm ./src/initEnv.js ; node index.js ",
+    "watch": "rm ./src/initEnv.js ; node index.js --watch",
+    "dry-run": "release-it --dry-run -n",
+    "pub": "release-it"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinjackson/watch-env.git"
+  },
+  "keywords": [
+    "dotenv"
+  ],
+  "author": "Martin A. Jackson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/martinjackson/watch-env/issues"
+  },
+  "homepage": "https://github.com/martinjackson/watch-env#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "process": "^0.11.10",
+    "ps-list": "^8.1.0"
+  },
+  "devDependencies": {
+    "release-it": "^14.12.5"
+  }
+}
