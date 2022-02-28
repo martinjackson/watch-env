@@ -2,19 +2,37 @@
 
 'use strict';
 
-var nodeVer = process.versions.node;
-var major = nodeVer.split('.')[0];
+// Hardcoded locations,  would people want to pass these loacations as arguments?  let me know...
+const envLocation = './.env'
+const destFile = './src/initEnv.js'
 
-if (major < 8) {
-  console.error(
-      'You are running Node ' +
-        nodeVersion +
-        '.\n' +
-        'need Node 8 or higher. \n' +
-        'Please update your version of Node.'
-  );
-  process.exit(1);
+// ----------------------------------------------------------------------------------------------
+const run = async () => {
+
+const {buildInitEnv, setWatch} = await import('./watch-env.mjs');
+
+
+buildInitEnv(envLocation, destFile);
+
+const myArgs = process.argv.slice(2)
+if (myArgs.length == 0) {
+    console.log(`${envLocation} ===>>>  ${destFile} `);
+    process.exit(0)
 }
 
-require('./watch-env.mjs');
+if (myArgs[0] === '--watch') {
 
+    setWatch(envLocation, destFile)
+
+} else {
+    console.log('');
+    console.log('Help for watch-env.js');
+    console.log('  1. run in the background and watch for ./.env file to change:');
+    console.log('     node watch-env.js --watch &');
+    console.log('');
+    console.log('  2. run once:');
+    console.log('     node watch-env.js');
+}
+}
+
+run()
