@@ -1,6 +1,6 @@
 {
   "name": "watch-env",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "a utility to convert .env file into ./src/initEnv.js that can be included in your front end code so the back end and front end can share project wide constants.",
   "main": "index.js",
   "bin": {
