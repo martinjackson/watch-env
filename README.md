@@ -21,8 +21,11 @@ npx watch-env --watch &
 ```
     "prep": "node watch-env.mjs",
     "watch": "node watch-env.mjs --watch &",
-    "build": "npm-s prep webpack"
-    "start": "run-s watch back front",
+    
+    "build": "run-s prep webpack"
     "front": "webpack serve",
     "back": "cd server && ./start.sh",
+
+    "start": "run-s watch back front",
+    "prod": "run-s build back"
 ```
