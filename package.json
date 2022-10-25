@@ -26,11 +26,13 @@
   },
   "homepage": "https://github.com/martinjackson/watch-env#readme",
   "dependencies": {
-    "dotenv": "^16.0.0",
+    "dotenv": "^16.0.3",
+    "parse-path": "^7.0.0",
     "process": "^0.11.10",
-    "ps-list": "^8.1.0"
+    "ps-list": "^8.1.0",
+    "yargs": "github:yargs/yargs"
   },
   "devDependencies": {
-    "release-it": "^14.12.5"
+    "release-it": "^15.5.0"
   }
 }
