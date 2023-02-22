@@ -15,7 +15,16 @@ export const buildInitEnv = (envLocation, destFile) => {
 
     const data = JSON.stringify(result.parsed, null, 2)
     const setup = `
-    window.env = ${data}
+    const env = ${data}
+    
+    if (window) {
+       window.env = env
+    }
+    
+    if (globalThis) {
+       globalThis.env = env
+    }
+    
     `
 
     fs.writeFileSync(destFile, setup);
